@@ -15,4 +15,5 @@
     <string name="semi_detached_home_menu_item_text">Semi-Detached Home</string>
     <string name="condo_menu_item_text">Condominium Apartment</string>
     <string name="townhouse_menu_item_text">Townhouse</string>
+    <string name="house_image_placeholder">House and or Apartment Image</string>
 </resources>

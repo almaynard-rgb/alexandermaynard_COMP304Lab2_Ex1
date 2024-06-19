@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class Townhouse : AppCompatActivity() {
     //list of townhouses to be used by the recycler view.
     private val townhouseList = ArrayList<String>()
+    private var townhouseImageList = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +30,7 @@ class Townhouse : AppCompatActivity() {
         val townhouseRecyclerList = findViewById<RecyclerView>(R.id.house_type_recycler_view)
 
         //create instance of the HouseItemsRecyclerViewAdapter and assign it to the townhouseRecyclerAdapter
-        townhouseRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, townhouseList)
+        townhouseRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, townhouseList, townhouseImageList)
 
         //add dividers for the recycler list items to more easily view them.
         townhouseRecyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
@@ -40,6 +41,12 @@ class Townhouse : AppCompatActivity() {
         //add townhouses to the list of townhouses
         townhouseList.add("Town House: 2 bedroom, 1 bath. 2131 Harbison Avenue, Winnipeg NB, Canada at $147,900")
         townhouseList.add("Town House: 3 bedroom, 2 bath. 1212 Corbett Drive, Winnipeg NB, Canada at $389,000.")
+
+        //from: https://www.houseful.ca/richmond-hill-on/2-amulet-crescent-richmond-hill-on-l4s-2s5/pid_upv9wvmh9q/
+        townhouseImageList.add(R.drawable.town_house_1)
+        //from: https://www.houseful.ca/hamilton-on/1540-upper-gage-ave-unit-7-hamilton-on-l8w-1e7/pid_rljiserx3y/
+        townhouseImageList.add(R.drawable.town_house_2)
+
 
         //townhouse checkout button functionality
         val townhouseCheckoutBtn = findViewById<Button>(R.id.townhouse_checkout_btn)

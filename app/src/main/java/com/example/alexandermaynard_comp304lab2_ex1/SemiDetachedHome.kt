@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class SemiDetachedHome : AppCompatActivity() {
     //list of semi-detached homes to be used by the recycler view.
     private val semiDetachedHomeList = ArrayList<String>()
+    private var semiDetachedHomeImageList = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +30,7 @@ class SemiDetachedHome : AppCompatActivity() {
         val detachedHomeRecyclerList = findViewById<RecyclerView>(R.id.house_type_recycler_view)
 
         //create instance of the HouseItemsRecyclerViewAdapter and assign it to the semiDetachedHomeRecyclerAdapter
-        detachedHomeRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, semiDetachedHomeList)
+        detachedHomeRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, semiDetachedHomeList, semiDetachedHomeImageList)
 
         //add dividers for the recycler list items to more easily view them.
         detachedHomeRecyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
@@ -40,6 +41,11 @@ class SemiDetachedHome : AppCompatActivity() {
         //add semi-detached homes to the list of detached homes
         semiDetachedHomeList.add("Semi-Detached Home: 2 bedroom, 1 bath. 1231 Brandon Street, Winnipeg NB, Canada at $320,000.")
         semiDetachedHomeList.add("Semi-Detached Home: 3 bedroom, 2 bath. 453 St. Malo Boulevard, Winnipeg NB, Canada at $460,650.")
+
+        //from: https://www.archdaily.com/203237/two-semi-detached-houses-in-barcelona-cavaa-arquitectes
+        semiDetachedHomeImageList.add(R.drawable.semi_detached_house_1)
+        //from: https://heapsestrin.com/semi-detached-vs-townhomes/
+        semiDetachedHomeImageList.add(R.drawable.semi_detached_house_2)
 
 
         //semi-detached homes checkout button functionality

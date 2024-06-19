@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class CondominiumApartment : AppCompatActivity() {
     //list of condo apartments to be used by the recycler view.
     private val condoApartmentList = ArrayList<String>()
+    private var condoApartmentImageList = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,7 +31,7 @@ class CondominiumApartment : AppCompatActivity() {
         val condoApartmentRecyclerList = findViewById<RecyclerView>(R.id.house_type_recycler_view)
 
         //create instance of the HouseItemsRecyclerViewAdapter and assign it to the condoApartmentRecyclerAdapter
-        condoApartmentRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, condoApartmentList)
+        condoApartmentRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, condoApartmentList, condoApartmentImageList)
 
         //add dividers for the recycler list items to more easily view them.
         condoApartmentRecyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
@@ -41,6 +42,11 @@ class CondominiumApartment : AppCompatActivity() {
         //add condo apartments to the list of condo apartments
         condoApartmentList.add("Condo: 2 bedroom, 2 bath. 1542 Pembina Highway, Winnipeg NB, Canada at $189,900")
         condoApartmentList.add("Condo: 3 bedroom, 2 bath. 2341 Creek Bend Road, Winnipeg NB, Canada at $339,900.")
+
+        //from: https://e-rockwell.com/this-luxury-condo-in-quezon-city-is-proof-that-resort-style-living-can-be-yours-every-day/
+        condoApartmentImageList.add(R.drawable.condo_1)
+        //from: https://www.carousell.ph/p/1287832544/
+        condoApartmentImageList.add(R.drawable.condo_2)
 
         //condo apartment checkout button functionality
         val condoApartmentCheckoutBtn = findViewById<Button>(R.id.condo_apartment_checkout_btn)

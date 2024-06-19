@@ -17,6 +17,7 @@ import kotlin.collections.ArrayList
 class Apartment : AppCompatActivity() {
     //list of apartments to be used by the recycler view.
     private var apartmentList = ArrayList<String>()
+    private var apartmentImageList = ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,7 @@ class Apartment : AppCompatActivity() {
         val apartmentRecyclerList = findViewById<RecyclerView>(R.id.house_type_recycler_view)
 
         //create instance of the HouseItemsRecyclerViewAdapter and assign it to the apartmentRecyclerAdapter
-        apartmentRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, apartmentList)
+        apartmentRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, apartmentList, apartmentImageList)
 
         //add dividers for the recycler list items to more easily view them.
         apartmentRecyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
@@ -43,6 +44,13 @@ class Apartment : AppCompatActivity() {
         //add apartments to the list of apartments
         apartmentList.add("Apartment: 2 bedroom, 1 bath. 16 Marion Street, Winnipeg NB, Canada at $3000/month.")
         apartmentList.add("Apartment: 1 bedroom, 1 bath. 24 Zander Street, Winnipeg MB, Canada at $1500/month.")
+
+        //from: https://www.pexels.com/photo/interior-design-of-a-house-1571460/
+        apartmentImageList.add(R.drawable.apartment_1)
+        //from: https://www.pexels.com/photo/green-2-seat-sofa-1918291/
+        apartmentImageList.add(R.drawable.apartment_2)
+
+
 
         //apartment checkout button functionality
         val apartmentCheckoutBtn = findViewById<Button>(R.id.apartment_checkout_btn)

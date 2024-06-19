@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 class DetachedHome : AppCompatActivity() {
     //list of detached homes to be used by the recycler view.
     private val detachedHomeList = ArrayList<String>()
+    private var detachedHomeImageList = ArrayList<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,7 +30,7 @@ class DetachedHome : AppCompatActivity() {
         val detachedHomeRecyclerList = findViewById<RecyclerView>(R.id.house_type_recycler_view)
 
         //create instance of the HouseItemsRecyclerViewAdapter and assign it to the detachedHomeRecyclerAdapter
-        detachedHomeRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, detachedHomeList)
+        detachedHomeRecyclerList.adapter = HouseItemsRecyclerViewAdapter(this, detachedHomeList, detachedHomeImageList)
 
         //add dividers for the recycler list items to more easily view them.
         detachedHomeRecyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
@@ -40,6 +41,11 @@ class DetachedHome : AppCompatActivity() {
         //add detached homes to the list of detached homes
         detachedHomeList.add("Detached Home: 3 bedroom, 3 bath. 65 Farmingdale Boulevard, Winnipeg NB, Canada at $400,800.")
         detachedHomeList.add("Detached Home: 2 bedroom, 2 bath. 1412 Grotto Avenue, Winnipeg NB, Canada at $365,000.")
+
+        //from: https://www.quickenloans.com/learn/semi-detached-house
+        detachedHomeImageList.add(R.drawable.detached_house_1)
+        //from: https://www.galwaydaily.com/galway-property/three-bed-detached-house-comes-with-stunning-back-garden/
+        detachedHomeImageList.add(R.drawable.detached_house_2)
 
         //detached homes checkout button functionality
         val detachedHomeCheckoutBtn = findViewById<Button>(R.id.detached_home_checkout_btn)
