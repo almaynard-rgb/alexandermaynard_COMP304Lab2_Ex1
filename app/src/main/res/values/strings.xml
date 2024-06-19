@@ -2,6 +2,8 @@
     <string name="app_name">Lease Or Rent Home Inc.</string>
     <string name="option_menu_text">Lease Or Rent Home Inc.</string>
     <string name="lease_or_rent_home_inc_logo_content_description">Lease Or Rent Home Inc. Logo</string>
+    <string name="apartment_title_text">Apartment Selection</string>
     <string name="enter_btn_text">Enter</string>
     <string name="second_screen_prompt_text">Please select a home type from the options menu above to get started.</string>
+    <string name="checkout_btn_text">Checkout</string>
 </resources>
