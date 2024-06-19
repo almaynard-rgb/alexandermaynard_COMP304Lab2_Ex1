@@ -5,6 +5,44 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#22CF95"
     tools:context=".Townhouse">
+
+    <TextView
+        android:id="@+id/townhouse_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/townhouse_title_text"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/house_type_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392"
+        android:textAlignment="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/house_type_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <Button
+        android:id="@+id/townhouse_checkout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="130dp"
+        android:height="60dp"
+        android:backgroundTint="#2C594A"
+        android:text="@string/checkout_btn_text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/house_type_recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

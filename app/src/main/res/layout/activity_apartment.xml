@@ -10,6 +10,7 @@
 
 
     <TextView
+        android:id="@+id/apartment_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/apartment_title_text"
@@ -19,7 +20,8 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintVertical_bias="0.392"
+        android:textAlignment="center" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/house_type_recycler_view"
@@ -31,7 +33,7 @@
         tools:layout_editor_absoluteX="36dp" />
 
     <Button
-        android:id="@+id/apartment_btn"
+        android:id="@+id/apartment_checkout_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="130dp"

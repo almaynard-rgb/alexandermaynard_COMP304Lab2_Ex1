@@ -3,7 +3,16 @@
     <string name="option_menu_text">Lease Or Rent Home Inc.</string>
     <string name="lease_or_rent_home_inc_logo_content_description">Lease Or Rent Home Inc. Logo</string>
     <string name="apartment_title_text">Apartment Selection</string>
+    <string name="condo_apartment_title_text">Condominium Apartment Selection</string>
+    <string name="detached_home_title_text">Detached Home Selection</string>
+    <string name="semi_detached_home_title_text">Semi-Detached Home Selection</string>
+    <string name="townhouse_title_text">Townhouse Selection</string>
     <string name="enter_btn_text">Enter</string>
     <string name="second_screen_prompt_text">Please select a home type from the options menu above to get started.</string>
     <string name="checkout_btn_text">Checkout</string>
+    <string name="apartment_menu_item_text">Apartment</string>
+    <string name="detached_home_menu_item_text">Detached Home</string>
+    <string name="semi_detached_home_menu_item_text">Semi-Detached Home</string>
+    <string name="condo_menu_item_text">Condominium Apartment</string>
+    <string name="townhouse_menu_item_text">Townhouse</string>
 </resources>

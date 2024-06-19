@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/apartment_page_menu_item"
+        android:title="@string/apartment_menu_item_text">
+    </item>
+    <item
+        android:id="@+id/detached_home_page_menu_item"
+        android:title="@string/detached_home_menu_item_text">
+    </item>
+    <item
+        android:id="@+id/semi_detached_home_page_menu_item"
+        android:title="@string/semi_detached_home_menu_item_text">
+    </item>
+    <item
+        android:id="@+id/condo_page_menu_item"
+        android:title="@string/condo_menu_item_text">
+    </item>
+    <item
+        android:id="@+id/townhouse_page_menu_item"
+        android:title="@string/townhouse_menu_item_text">
+    </item>
 </menu>
