@@ -1,23 +1,18 @@
 package com.example.alexandermaynard_comp304lab2_ex1
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 
 class CheckoutScreen : AppCompatActivity() {
-    //house choice radio buttons list for Recycler view
-    private val houseChoicesRadioButtonList = ArrayList<RadioButton>()
-    //house choice string list for Recycler view
-    private val houseChoicesList = ArrayList<String>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,40 +26,50 @@ class CheckoutScreen : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+
+        //shared preferences
+        val finalHouseChoiceSharedPrefs = getSharedPreferences("finalHouseChoice", Context.MODE_PRIVATE)
+        val editFinalHouseChoicePrefs = finalHouseChoiceSharedPrefs.edit()
+
         //preferences previously saved for which houses are preferred
         val houseSharedPrefs = getSharedPreferences("housePreferences",0)
 
-        //initial house bought value
-        var housetoBuy = ""
-
-        //recycler list for the items to be added to the recycler view
-        val recyclerList = findViewById<RecyclerView>(R.id.house_checkout_recycler_view)
-
-        //add the recycler view to the adapter
-        recyclerList.adapter = CheckoutRecyclerViewAdapter(this, houseChoicesRadioButtonList, houseChoicesList)
-
-        //add dividers for the recycler list items
-        recyclerList.addItemDecoration(DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL))
-
-        //vertical layout for the recycler items
-        recyclerList.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
-
+        val checkoutHouseChoiceRadioGroup = findViewById<RadioGroup>(R.id.checkout_radio_group)
+        checkoutHouseChoiceRadioGroup.clearCheck()
+        checkoutHouseChoiceRadioGroup.removeAllViews()
 
         for (houseInfo in houseSharedPrefs.all)
         {
-            if(houseChoicesList.contains(houseInfo.value.toString())) { return }
+            //if(houseChoicesList.contains(houseInfo.value.toString())) { return }
             val newRadioButton = RadioButton(applicationContext)
-            houseChoicesRadioButtonList.add(newRadioButton)
-            houseChoicesList.add(houseInfo.value.toString())
+            val paddingDp = 20
+            val screenDensity = resources.displayMetrics.density
+            val paddingDpToPx = paddingDp * screenDensity
+            newRadioButton.setPadding(0, paddingDpToPx.toInt(), 0 , paddingDpToPx.toInt())
+            newRadioButton.textSize = 16F
+            newRadioButton.text = houseInfo.value.toString()
+            checkoutHouseChoiceRadioGroup.addView(newRadioButton)
+
+            newRadioButton.setOnClickListener {
+                editFinalHouseChoicePrefs.putString("finalHouseSelected", houseInfo.value.toString()).commit()
+            }
         }
 
         //get button to go to the next activity
-        val checkoutBtn = findViewById<Button>(R.id.payment_checkout_btn)
+        val paymentBtn = findViewById<Button>(R.id.payment_checkout_btn)
         //to go next activity and pass the housetoBuy by intent
-        checkoutBtn.setOnClickListener(View.OnClickListener {
-            val nextActivityIntent = Intent(this, PaymentScreen::class.java)
-            nextActivityIntent.putExtra("housetoBuy", housetoBuy)
-            startActivity(nextActivityIntent)
-        })
+        paymentBtn.setOnClickListener {
+            //check if at least one radio button is selected
+            if(checkoutHouseChoiceRadioGroup.checkedRadioButtonId != -1) {
+                //proceed to the next activity to pay
+                val nextActivityIntent = Intent(this, PaymentScreen::class.java)
+                startActivity(nextActivityIntent)
+            }
+            //payments fields not done properly
+            else {
+                //send a message to the user
+                Toast.makeText(applicationContext, "You must selected a house to buy before proceeding!", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }

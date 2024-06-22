@@ -8,6 +8,7 @@
     <string name="semi_detached_home_title_text">Semi-Detached Home Selection</string>
     <string name="townhouse_title_text">Townhouse Selection</string>
     <string name="checkout_screen_title_text">Checkout</string>
+    <string name="payment_screen_title_text">Payment</string>
     <string name="enter_btn_text">Enter</string>
     <string name="second_screen_prompt_text">Please select a home type from the options menu above to get started.</string>
     <string name="checkout_btn_text">Checkout</string>
@@ -18,4 +19,13 @@
     <string name="condo_menu_item_text">Condominium Apartment</string>
     <string name="townhouse_menu_item_text">Townhouse</string>
     <string name="house_image_placeholder">House and or Apartment Image</string>
+    <string name="payment_enter_name_entry">Enter your full name</string>
+    <string name="payment_credit_radio_option_prompt_text">Credit</string>
+    <string name="payment_debit_radio_option_prompt_text">Debit</string>
+    <string name="payment_credit_debit_number_entry">Enter your credit or credit card number</string>
+    <string name="payment_optional_prompt_text">Optional: Please let us know more about you!</string>
+    <string name="payment_optional_fav_sport_entry">Enter your favourite sport</string>
+    <string name="payment_optional_fav_sport_team_entry">Enter your favourite sports team</string>
+    <string name="payment_optional_fav_food_entry">Enter your favourite food</string>
+    <string name="payment_pay_btn_text">Pay</string>
 </resources>
