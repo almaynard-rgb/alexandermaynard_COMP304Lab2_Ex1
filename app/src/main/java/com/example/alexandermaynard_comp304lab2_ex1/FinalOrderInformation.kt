@@ -34,8 +34,11 @@ class FinalOrderInformation : AppCompatActivity() {
         val finalOrderInfoTextview = findViewById<TextView>(R.id.final_order_info_textview)
         finalOrderInfoTextview.text = getSharedPreferences("finalHouseChoice", Context.MODE_PRIVATE).getString("finalHouseSelected", "")
 
+        //reference to the mainScreenBtn
         val mainScreenBtn = findViewById<Button>(R.id.main_enter_btn)
+        //listen for input
         mainScreenBtn.setOnClickListener {
+            //if the user clicks on the button then go to the MainScreen activity
             val i = Intent(this@FinalOrderInformation, MainScreen::class.java)
             startActivity(i)
         }

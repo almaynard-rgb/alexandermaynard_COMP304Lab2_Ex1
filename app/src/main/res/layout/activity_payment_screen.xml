@@ -24,8 +24,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--Text view to display the final house option that was chosen-->
-
-    <!--Edit text for the user to enter their fullname-->
     <TextView
         android:id="@+id/payment_house_option_choice"
         style="@style/sub_title_text"
@@ -36,6 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_title" />
 
+    <!--Edit text for the user to enter their fullname-->
     <EditText
         android:id="@+id/payment_full_name_entry"
         style="@style/input_text_edittext"
