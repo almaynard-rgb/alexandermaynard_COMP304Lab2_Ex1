@@ -12,34 +12,36 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SemiDetachedHome">
+    tools:context=".FinalOrderInformation">
 
-    <!--Title for the activity-->
+    <!--Textview showing the final order information-->
     <TextView
-        android:id="@+id/semi_detached_home_title"
+        android:id="@+id/final_order_info_title"
         style="@style/title_text"
-        android:text="@string/semi_detached_home_title_text"
-        app:layout_constraintBottom_toTopOf="@+id/house_type_recycler_view"
+        android:textAlignment="center"
+        android:text="@string/final_order_info_title_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--Recyclerview to display the desired apartment list-->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/house_type_recycler_view"
-        style="@style/recycler_view_widget"
+    <!--Textview showing the final order information-->
+    <TextView
+        android:id="@+id/final_order_info_textview"
+        style="@style/regular_text_view"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/final_order_info_title" />
 
-    <!--Button to go to the checkout activity-->
+    <!--Button to go to the main screen screen activity-->
     <Button
-        android:id="@+id/semi_detached_home_checkout_btn"
+        android:id="@+id/main_enter_btn"
         style="@style/regular_button"
-        android:text="@string/checkout_btn_text"
+        android:text="@string/return_to_main_screen_btn_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/house_type_recycler_view" />
+        app:layout_constraintTop_toBottomOf="@+id/final_order_info_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -85,7 +85,7 @@ class CheckoutScreen : AppCompatActivity() {
             //payments fields not done properly
             else {
                 //send a message to the user
-                Toast.makeText(applicationContext, "You must selected a house to buy before proceeding!", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "You must select house/houses to proceed!", Toast.LENGTH_LONG).show()
             }
         }
     }

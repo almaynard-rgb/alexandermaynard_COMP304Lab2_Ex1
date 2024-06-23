@@ -13,23 +13,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#22CF95"
     tools:context=".CheckoutScreen">
 
   <!--Title for the activity-->
   <TextView
       android:id="@+id/checkout_title"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
+      style="@style/title_text"
       android:text="@string/checkout_screen_title_text"
-      android:textAlignment="center"
-      android:textSize="30sp"
       app:layout_constraintBottom_toTopOf="@+id/house_checkout_scroll_view"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.496"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.392" />
+      app:layout_constraintTop_toTopOf="parent" />
 
   <!--Scrollview to display all the checkout houses radio group's radio buttons options in a more fluid/expandable format-->
   <ScrollView
@@ -50,13 +44,8 @@
   <!--Button to proceed to the Payment activity-->
   <Button
       android:id="@+id/payment_checkout_btn"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:width="130dp"
-      android:height="60dp"
-      android:backgroundTint="#2C594A"
+      style="@style/regular_button"
       android:text="@string/payment_btn_text"
-      android:textSize="16sp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"

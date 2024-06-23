@@ -12,49 +12,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#22CF95"
     tools:context=".PaymentScreen">
 
     <!--Title for the activity-->
     <TextView
         android:id="@+id/payment_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/title_text"
         android:text="@string/payment_screen_title_text"
-        android:textAlignment="center"
-        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--Text view to display the final house option that was chosen-->
+
+    <!--Edit text for the user to enter their fullname-->
     <TextView
         android:id="@+id/payment_house_option_choice"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="12dp"
+        style="@style/sub_title_text"
         android:text=""
         android:textColor="@color/black"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_title" />
 
-    <!--Edit text for the user to enter their fullname-->
     <EditText
         android:id="@+id/payment_full_name_entry"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        style="@style/input_text_edittext"
         android:autofillHints="enter your name"
         android:hint="@string/payment_enter_name_entry"
-        android:inputType="text"
-        android:lines="1"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_house_option_choice" />
@@ -65,39 +51,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:checkedButton="@+id/payment_credit_option"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/payment_full_name_entry">
 
         <!--Radio button selection for the credit card option-->
         <RadioButton
             android:id="@+id/payment_credit_option"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:text="@string/payment_credit_radio_option_prompt_text"
-            android:textColor="@color/black" />
+            style="@style/radio_btn"
+            android:text="@string/payment_credit_radio_option_prompt_text" />
 
         <!--Radio button selection for the debit card option-->
         <RadioButton
             android:id="@+id/payment_debit_option"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:text="@string/payment_debit_radio_option_prompt_text"
-            android:textColor="@color/black" />
+            style="@style/radio_btn"
+            android:text="@string/payment_debit_radio_option_prompt_text" />
     </RadioGroup>
 
     <!--Edit text for the user to enter their debit/credit card number-->
     <EditText
         android:id="@+id/payment_credit_or_debit_entry"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
+        style="@style/input_number_edittext"
         android:autofillHints="enter your card number"
         android:hint="@string/payment_credit_debit_number_entry"
-        android:inputType="number"
-        android:lines="1"
-        android:ems="19"
-        android:maxEms="19"
-        android:minEms="16"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_debit_or_credit_radio_group" />
@@ -105,14 +79,8 @@
     <!--Text view to the title for the optional fields area-->
     <TextView
         android:id="@+id/payment_optional_info_title"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_marginTop="24dp"
-        android:lines="1"
+        style="@style/sub_title_text"
         android:text="@string/payment_optional_prompt_text"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_credit_or_debit_entry" />
@@ -120,13 +88,9 @@
     <!--Edit text for the user to enter their favourite sport-->
     <EditText
         android:id="@+id/payment_favourite_sport_entry"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
+        style="@style/input_text_edittext"
         android:autofillHints="enter your favourite sport"
         android:hint="@string/payment_optional_fav_sport_entry"
-        android:inputType="text"
-        android:lines="1"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_optional_info_title" />
@@ -134,13 +98,9 @@
     <!--Edit text for the user to enter their favourite sports team-->
     <EditText
         android:id="@+id/payment_favourite_team_entry"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
+        style="@style/input_text_edittext"
         android:autofillHints="enter your favourite sports team name"
         android:hint="@string/payment_optional_fav_sport_team_entry"
-        android:inputType="text"
-        android:lines="1"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_favourite_sport_entry" />
@@ -148,13 +108,9 @@
     <!--Edit text for the user to enter their favourite food-->
     <EditText
         android:id="@+id/payment_favourite_food_entry"
-        android:layout_width="400dp"
-        android:layout_height="60dp"
+        style="@style/input_text_edittext"
         android:autofillHints="enter your favourite food"
         android:hint="@string/payment_optional_fav_food_entry"
-        android:inputType="text"
-        android:lines="1"
-        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_favourite_team_entry" />
@@ -162,15 +118,10 @@
     <!--Button to pay and return to the main screen activity-->
     <Button
         android:id="@+id/pay_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:width="130dp"
-        android:height="60dp"
-        android:backgroundTint="#2C594A"
+        style="@style/regular_button"
         app:layout_constraintTop_toBottomOf="@+id/payment_favourite_food_entry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/payment_pay_btn_text"
-        android:textSize="16sp" />
+        android:text="@string/payment_pay_btn_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,9 +47,9 @@ class PaymentScreen : AppCompatActivity() {
             }
             //otherwise, you payed successfully
             else {
-                //send success message and then return to the main screen
+                //send success message and go to the final order info activity
                 Toast.makeText(applicationContext, "Payment Successful!", Toast.LENGTH_LONG).show()
-                val nextActivityIntent = Intent(this, MainScreen::class.java)
+                val nextActivityIntent = Intent(this, FinalOrderInformation::class.java)
                 startActivity(nextActivityIntent)
             }
         }

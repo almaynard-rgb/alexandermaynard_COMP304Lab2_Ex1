@@ -12,16 +12,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#22CF95"
     tools:context=".SecondScreen">
 
     <!--Textview showing instructions on how to proceed to the next activity-->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        style="@style/regular_text_view"
         android:text="@string/second_screen_prompt_text"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

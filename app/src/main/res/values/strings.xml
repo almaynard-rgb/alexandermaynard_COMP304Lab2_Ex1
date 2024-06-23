@@ -6,9 +6,11 @@
     <string name="detached_home_title_text">Detached Home Selection</string>
     <string name="semi_detached_home_title_text">Semi-Detached Home Selection</string>
     <string name="townhouse_title_text">Townhouse Selection</string>
+    <string name="final_order_info_title_text">Order Complete!</string>
     <string name="checkout_screen_title_text">Checkout</string>
     <string name="payment_screen_title_text">Payment</string>
     <string name="enter_btn_text">Enter</string>
+    <string name="return_to_main_screen_btn_text">Main Screen</string>
     <string name="second_screen_prompt_text">Please select a home type from the options menu above to get started.</string>
     <string name="checkout_btn_text">Checkout</string>
     <string name="payment_btn_text">Payment</string>
