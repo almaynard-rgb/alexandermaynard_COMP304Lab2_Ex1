@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Student Name: Alexander Maynard
+    * Course: COMP304 (Section 401)
+    * Professor: Parth Padhiyar
+    * Assignment: Lab 2 - Exercise 1
+    * Date: 2024-06-22 -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +15,7 @@
     android:background="#22CF95"
     tools:context=".PaymentScreen">
 
+    <!--Title for the activity-->
     <TextView
         android:id="@+id/payment_title"
         android:layout_width="wrap_content"
@@ -22,6 +30,7 @@
         android:textColor="@color/black"
         app:layout_constraintVertical_bias="0.392" />
 
+    <!--Text view to display the final house option that was chosen-->
     <TextView
         android:id="@+id/payment_house_option_choice"
         android:layout_width="400dp"
@@ -35,6 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_title" />
 
+    <!--Edit text for the user to enter their fullname-->
     <EditText
         android:id="@+id/payment_full_name_entry"
         android:layout_width="400dp"
@@ -49,6 +59,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_house_option_choice" />
 
+    <!--Radio group for the user to pick credit or debit as a payment option-->
     <RadioGroup
         android:id="@+id/payment_debit_or_credit_radio_group"
         android:layout_width="match_parent"
@@ -57,6 +68,7 @@
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/payment_full_name_entry">
 
+        <!--Radio button selection for the credit card option-->
         <RadioButton
             android:id="@+id/payment_credit_option"
             android:layout_width="320dp"
@@ -64,6 +76,7 @@
             android:text="@string/payment_credit_radio_option_prompt_text"
             android:textColor="@color/black" />
 
+        <!--Radio button selection for the debit card option-->
         <RadioButton
             android:id="@+id/payment_debit_option"
             android:layout_width="320dp"
@@ -72,6 +85,7 @@
             android:textColor="@color/black" />
     </RadioGroup>
 
+    <!--Edit text for the user to enter their debit/credit card number-->
     <EditText
         android:id="@+id/payment_credit_or_debit_entry"
         android:layout_width="400dp"
@@ -88,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_debit_or_credit_radio_group" />
 
-
+    <!--Text view to the title for the optional fields area-->
     <TextView
         android:id="@+id/payment_optional_info_title"
         android:layout_width="wrap_content"
@@ -103,6 +117,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_credit_or_debit_entry" />
 
+    <!--Edit text for the user to enter their favourite sport-->
     <EditText
         android:id="@+id/payment_favourite_sport_entry"
         android:layout_width="400dp"
@@ -116,6 +131,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_optional_info_title" />
 
+    <!--Edit text for the user to enter their favourite sports team-->
     <EditText
         android:id="@+id/payment_favourite_team_entry"
         android:layout_width="400dp"
@@ -129,6 +145,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_favourite_sport_entry" />
 
+    <!--Edit text for the user to enter their favourite food-->
     <EditText
         android:id="@+id/payment_favourite_food_entry"
         android:layout_width="400dp"
@@ -142,6 +159,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/payment_favourite_team_entry" />
 
+    <!--Button to pay and return to the main screen activity-->
     <Button
         android:id="@+id/pay_btn"
         android:layout_width="wrap_content"

@@ -12,6 +12,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+/* Student Name: Alexander Maynard
+* Course: COMP304 (Section 401)
+* Professor: Parth Padhiyar
+* Assignment: Lab 2 - Exercise 1
+* Date: 2024-06-22 */
+
 class PaymentScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +28,6 @@ class PaymentScreen : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        //option that was picked passed from the checkout screen
-        //val optionFromCheckOut = intent.getStringExtra("housetoBuy")
 
         ///name and credit card fields from the xml file
         val fullnameTxt = findViewById<EditText>(R.id.payment_full_name_entry).text

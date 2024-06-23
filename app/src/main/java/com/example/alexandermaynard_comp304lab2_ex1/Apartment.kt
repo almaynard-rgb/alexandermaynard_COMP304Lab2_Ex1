@@ -1,5 +1,11 @@
 package com.example.alexandermaynard_comp304lab2_ex1
 
+/* Student Name: Alexander Maynard
+* Course: COMP304 (Section 401)
+* Professor: Parth Padhiyar
+* Assignment: Lab 2 - Exercise 1
+* Date: 2024-06-22 */
+
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -12,10 +18,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlin.collections.ArrayList
 
 class Apartment : AppCompatActivity() {
-    //list of apartments to be used by the recycler view.
+    //list of apartments to be used by the house items recycler view.
     private var apartmentList = ArrayList<String>()
     private var apartmentImageList = ArrayList<Int>()
 
@@ -50,45 +55,56 @@ class Apartment : AppCompatActivity() {
         //from: https://www.pexels.com/photo/green-2-seat-sofa-1918291/
         apartmentImageList.add(R.drawable.apartment_2)
 
-
-
         //apartment checkout button functionality
         val apartmentCheckoutBtn = findViewById<Button>(R.id.apartment_checkout_btn)
         //on click for the apartment checkout button
         apartmentCheckoutBtn.setOnClickListener {
+            //proceed to the checkout screen
             val nextActivityIntent = Intent(this@Apartment, CheckoutScreen::class.java)
             startActivity(nextActivityIntent)
         }
     }
 
+    //inflate the options menu
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.options_menu, menu)
         return true
     }
 
+    //provide options for when a options menu item is selected
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return menuItemSelected(item)
+        return menuItemSelected(item) //call method to provide the functionality
     }
 
+    //method that provides functionality for all the options items when clicked
     private fun menuItemSelected(item: MenuItem): Boolean {
+        //check the item id
         when (item.itemId) {
+            //when detached home option is pressed
             R.id.detached_home_page_menu_item -> {
+                //go to the DetachedHome Screen
                 val nextScreenIntent = Intent(this, DetachedHome::class.java)
                 startActivity(nextScreenIntent)
                 return true
             }
+            //when semi-detached home option is pressed
             R.id.semi_detached_home_page_menu_item -> {
+                //go to the SemiDetachedHome Screen
                 val nextScreenIntent = Intent(this, SemiDetachedHome::class.java)
                 startActivity(nextScreenIntent)
                 return true
             }
+            //when condo home option is pressed
             R.id.condo_page_menu_item -> {
+                //go to the CondominiumApartment Screen
                 val nextScreenIntent = Intent(this, CondominiumApartment::class.java)
                 startActivity(nextScreenIntent)
                 return true
             }
+            //when townhouse home option is pressed
             R.id.townhouse_page_menu_item -> {
+                //go to the Townhouse Screen
                 val nextScreenIntent = Intent(this, Townhouse::class.java)
                 startActivity(nextScreenIntent)
                 return true

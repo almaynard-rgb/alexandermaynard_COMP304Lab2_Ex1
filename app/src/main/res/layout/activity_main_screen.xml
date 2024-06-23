@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Student Name: Alexander Maynard
+    * Course: COMP304 (Section 401)
+    * Professor: Parth Padhiyar
+    * Assignment: Lab 2 - Exercise 1
+    * Date: 2024-06-22 -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +15,7 @@
     android:background="#22CF95"
     tools:context=".MainScreen">
 
+    <!--Image displaying the Company Logo-->
     <ImageView
         android:id="@+id/main_image_view"
         android:layout_width="wrap_content"
@@ -22,6 +30,7 @@
         app:layout_constraintVertical_bias="0.331"
         app:srcCompat="@drawable/lease_or_rent_home_logo" />
 
+    <!--Button to go to the second screen activity-->
     <Button
         android:id="@+id/main_enter_btn"
         android:layout_width="wrap_content"

@@ -1,5 +1,11 @@
 package com.example.alexandermaynard_comp304lab2_ex1
 
+/* Student Name: Alexander Maynard
+* Course: COMP304 (Section 401)
+* Professor: Parth Padhiyar
+* Assignment: Lab 2 - Exercise 1
+* Date: 2024-06-22 */
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -27,30 +33,41 @@ class CheckoutScreen : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        //shared preferences
+        //shared preferences for the final house choice
         val finalHouseChoiceSharedPrefs = getSharedPreferences("finalHouseChoice", Context.MODE_PRIVATE)
-        val editFinalHouseChoicePrefs = finalHouseChoiceSharedPrefs.edit()
+        val editFinalHouseChoicePrefs = finalHouseChoiceSharedPrefs.edit() //used to edit the shared preferences more easily
 
-        //preferences previously saved for which houses are preferred
-        val houseSharedPrefs = getSharedPreferences("housePreferences",0)
+        //preferences previously saved for which houses are preferred on the different house type screens
+        val preferredHouseSharedPrefs = getSharedPreferences("housePreferences",0)
 
+        //reference to the checkout radio group
         val checkoutHouseChoiceRadioGroup = findViewById<RadioGroup>(R.id.checkout_radio_group)
-        checkoutHouseChoiceRadioGroup.clearCheck()
-        checkoutHouseChoiceRadioGroup.removeAllViews()
+        checkoutHouseChoiceRadioGroup.clearCheck() //clear any checks before on start
+        checkoutHouseChoiceRadioGroup.removeAllViews() //removeAllViews so there are no duplicates on start
 
-        for (houseInfo in houseSharedPrefs.all)
+        //loop through all the PREFERRED house shared preferences to create the necessary amount of radio buttons
+        for (houseInfo in preferredHouseSharedPrefs.all)
         {
-            //if(houseChoicesList.contains(houseInfo.value.toString())) { return }
+            //create a new radiobutton
             val newRadioButton = RadioButton(applicationContext)
+            //desired density independent pixels
             val paddingDp = 20
+            //get screen density
             val screenDensity = resources.displayMetrics.density
+            //convert dp to actual pixels so the padding is correct
             val paddingDpToPx = paddingDp * screenDensity
+            //set the padding to the items are spaced out properly
             newRadioButton.setPadding(0, paddingDpToPx.toInt(), 0 , paddingDpToPx.toInt())
+            //set the text of the radio button text size
             newRadioButton.textSize = 16F
+            //set the new radio button text to the shared preference
             newRadioButton.text = houseInfo.value.toString()
             checkoutHouseChoiceRadioGroup.addView(newRadioButton)
 
+            //create setOnClickListener to listen for input on each radio button
             newRadioButton.setOnClickListener {
+                //if this radio button is clicked then set it's text as the final house
+                //selected shared preference (this may update or create it for the first time).
                 editFinalHouseChoicePrefs.putString("finalHouseSelected", houseInfo.value.toString()).commit()
             }
         }

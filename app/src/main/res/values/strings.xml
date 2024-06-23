@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Lease Or Rent Home Inc.</string>
-    <string name="option_menu_text">Lease Or Rent Home Inc.</string>
     <string name="lease_or_rent_home_inc_logo_content_description">Lease Or Rent Home Inc. Logo</string>
     <string name="apartment_title_text">Apartment Selection</string>
     <string name="condo_apartment_title_text">Condominium Apartment Selection</string>

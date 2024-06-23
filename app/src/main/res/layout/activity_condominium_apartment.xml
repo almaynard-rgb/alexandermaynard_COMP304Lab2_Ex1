@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:background="#22CF95"
     tools:context=".CondominiumApartment">
+
+    <!--Title for the activity-->
     <TextView
         android:id="@+id/condo_apartment_title"
         android:layout_width="wrap_content"
@@ -21,6 +23,7 @@
         app:layout_constraintVertical_bias="0.392"
         android:textAlignment="center" />
 
+    <!--Recyclerview to display the desired apartment list-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/house_type_recycler_view"
         android:layout_width="match_parent"
@@ -30,6 +33,7 @@
         app:layout_constraintVertical_bias="0.498"
         tools:layout_editor_absoluteX="36dp" />
 
+    <!--Button to go to the checkout activity-->
     <Button
         android:id="@+id/condo_apartment_checkout_btn"
         android:layout_width="wrap_content"

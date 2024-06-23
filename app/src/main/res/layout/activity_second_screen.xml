@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Student Name: Alexander Maynard
+    * Course: COMP304 (Section 401)
+    * Professor: Parth Padhiyar
+    * Assignment: Lab 2 - Exercise 1
+    * Date: 2024-06-22 -->
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +15,7 @@
     android:background="#22CF95"
     tools:context=".SecondScreen">
 
+    <!--Textview showing instructions on how to proceed to the next activity-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="300dp"
